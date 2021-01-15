@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
 html, body, p, ol, ul, li, dl, dt, dd, blockquote, figure, fieldset, legend, textarea, pre, iframe, hr, h1, h2, h3, h4, h5, h6 {
   margin: 0;
@@ -68,15 +69,28 @@ a {
 
 header {
   height: 8vh;
+  line-height: 8vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-header img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  height: 6vh;
-  padding: 5px;
-  margin-top: 10px;
+header .logo {
+  font-family: Shrikhand;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.fa-arrow-left {
+  position: absolute;
+  left: 2rem;
+  top: 3.9%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  font-size: 1.5rem;
 }
 
 #localisation {
@@ -159,6 +173,7 @@ header img {
       -ms-flex-align: center;
           align-items: center;
   background-color: #f0f0f0;
+  padding: 2rem;
 }
 
 #column h2 {
@@ -166,41 +181,38 @@ header img {
   width: 70%;
 }
 
-@media only screen and (min-width: 768px) {
-  #column h2 {
-    margin-top: 3%;
-  }
-}
-
 #column p {
   margin-top: 3%;
   text-align: center;
-  width: 80%;
   color: gray;
 }
 
 #column #explorer {
-  background-color: #FF79DA;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(147, 86, 220, 0.9)), to(rgba(255, 121, 218, 0.9)));
+  background: linear-gradient(0deg, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
   border-radius: 50px;
-  height: 6vh;
   border: none;
   color: white;
+  padding: 1rem 1.5rem;
   margin-top: 5%;
-  margin-bottom: 10%;
   padding-right: 5%;
   padding-left: 5%;
+}
+
+#fonctionnement {
+  margin-top: 2rem;
+  margin-left: 1rem;
 }
 
 h2 {
   font-weight: bold;
   font-size: 1.5rem;
-  padding: 10% 0 3% 3%;
 }
 
 .chiffre {
   position: relative;
   top: 6.5vh;
-  left: 8%;
+  left: 2%;
   width: 1.5rem;
   border-radius: 50%;
   background-color: #9356DC;
@@ -211,12 +223,12 @@ h2 {
 @media only screen and (min-width: 768px) {
   .chiffre {
     top: 6.3vh;
-    left: 9.5%;
+    left: 3.5%;
   }
 }
 
 .fonctionnement {
-  width: 80%;
+  width: 90%;
   background-color: #f0f0f0;
   height: 10vh;
   border: none;
@@ -244,7 +256,8 @@ h2 {
 
 #resto {
   background-color: #f0f0f0;
-  padding-bottom: 10%;
+  padding-bottom: 2rem;
+  margin-top: 3rem;
 }
 
 #resto .imgtext {
@@ -259,7 +272,9 @@ h2 {
 }
 
 #resto h2 {
-  margin-top: 10%;
+  padding-top: 2rem;
+  margin-bottom: 1rem;
+  margin-left: 1rem;
 }
 
 #resto .resto-img {
@@ -294,12 +309,48 @@ h2 {
   line-height: 3vh;
 }
 
+.container {
+  background-color: #f0f0f0;
+  border-radius: 50px 50px 0 0;
+  margin-top: -4rem;
+  z-index: 1;
+  position: relative;
+}
+
+.container .title-heart {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 1rem;
+  height: 10vh;
+  padding-top: 5%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding-right: 2rem;
+}
+
+.menu-title {
+  font-family: Shrikhand;
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-right: 4rem;
+}
+
+.fa-heart {
+  display: block;
+  margin-top: auto;
+  margin-bottom: auto;
+  font-size: 1.5rem;
+}
+
 footer {
   background-color: #383838;
   padding: 3vh;
 }
 
-footer #titre {
+footer .titre {
   font-family: Shrikhand;
   color: white;
   font-size: 1.2em;
@@ -318,7 +369,7 @@ footer p {
 }
 
 footer .fa-utensils {
-  padding-right: 2vh;
+  padding-right: 1.5vh;
 }
 
 footer .fa-hands-helping {
@@ -412,5 +463,76 @@ footer .fa-hands-helping {
     transform: rotate(360deg);
     z-index: -10;
   }
+}
+
+.border {
+  margin-left: 1rem;
+  text-transform: uppercase;
+  position: relative;
+  padding-bottom: .5rem;
+  padding-top: 1rem;
+}
+
+.border::after {
+  content: "";
+  width: 3rem;
+  height: .25rem;
+  background-color: #99e2d0;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+
+.allmenu {
+  background-color: white;
+  border-radius: 15px;
+  margin: 0 1rem;
+  padding-left: 15px;
+  margin-top: 4%;
+  height: 4rem;
+  line-height: 150%;
+  padding-top: 1vh;
+}
+
+.allmenu .allinline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin-right: 5%;
+}
+
+.allmenu .détails {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.boxcommand {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 2.5rem 0;
+}
+
+.boxcommand .commander {
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(147, 86, 220, 0.9)), to(rgba(255, 121, 218, 0.9)));
+  background: linear-gradient(0deg, rgba(147, 86, 220, 0.9), rgba(255, 121, 218, 0.9));
+  border-radius: 50px;
+  border: none;
+  color: white;
+  padding: .75rem 1.5rem;
+}
+
+#resto-note {
+  height: 37vh;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 /*# sourceMappingURL=style.css.map */
