@@ -328,6 +328,7 @@ h2 {
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding-right: 2rem;
+  margin-bottom: 1rem;
 }
 
 .menu-title {
