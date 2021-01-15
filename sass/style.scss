@@ -3,6 +3,13 @@
 $primary-color: #9356DC;
 $secondary-color: #FF79DA;
 $tertiary-color:#99E2D0;
+$screen-xl-min: 1024px;
+@mixin xl {
+    @media (min-width: #{$screen-xl-min}) {
+        @content;
+    }
+ }
+
 
 body{
     font-family: 'Roboto', sans-serif;
@@ -201,6 +208,13 @@ h2{
                         }
 }
 
+.resto-img2{
+    max-width: 100%;
+    max-height: 45vh;
+    width: 100%;
+    object-fit: cover;
+}
+
 .container{
     background-color: #f0f0f0;
     border-radius: 50px 50px 0 0;
@@ -365,4 +379,16 @@ footer{
     height: 37vh;
     width: 100%;
     object-fit: cover;
+}
+
+.column{
+    @include xl{
+        display: flex;
+    }
+}
+
+.menu1{
+    @include xl{
+        width: 33%;
+    }
 }
