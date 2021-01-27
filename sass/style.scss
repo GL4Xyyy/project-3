@@ -10,7 +10,6 @@ $screen-xl-min: 1024px;
     }
  }
 
-
 body{
     font-family: 'Roboto', sans-serif;
 }
@@ -20,10 +19,15 @@ a{
     text-decoration: none;
 }
 
+p{
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
 .fa-heart{
     &:hover{
         font-weight: bold;
-        transition: color 0.8s ease-out;
+        transition: color 0.3s ease-out;
         color: $secondary-color;
         cursor: pointer;
     }
@@ -121,43 +125,71 @@ h2{
 }
 
 .chiffre{
-    position: relative;
-    top: 6.5vh;
-    left: 2%;
     width: 1.5rem;
     border-radius: 50%;
-    background-color: $primary-color;
-    text-align: center;
+    background-color: #9356DC;
     color: white;
-        @media only screen and (min-width: 768px) {
-            top: 6.3vh;
-            left: 3.5%;
-        }
+    margin-left: -34px;
+    margin-top: auto;
+    margin-bottom: auto;
+    height: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .fonctionnement{
     width: 90%;
     background-color: rgb(240, 240, 240);
-    height: 10vh;
     border: none;
     border-radius: 20px;
     display: block;
     margin : auto;
     font-weight: bold;
     font-size: 0.9rem;
-        &:hover{
-            background-color: #f2eafb;
-            color:$primary-color;
+    display: flex;
+    align-items: center;
+    margin-top: 1rem;
+    padding: 1.5rem;
+        @include xl{
+            width: 30%;
         }
-            i{
-                color: gray;
-                font-size: 1.3rem;
-                margin-right: 10%;
-                &:hover{
-                    color: $primary-color;
+                i{
+                    color: gray;
+                    font-size: 1.3rem;
+                    margin-top: auto;
+                    margin-bottom: auto;
+                    margin-left: 2rem;
+                    margin-right: 2rem;
+
+                    }
                 }
-            }
-        }
+
+#fonctionnement2{
+                width: 90%;
+                background-color: #f2eafb;
+                border: none;
+                border-radius: 20px;
+                display: block;
+                margin : auto;
+                font-weight: bold;
+                font-size: 0.9rem;
+                display: flex;
+                align-items: center;
+                margin-top: 1rem;
+                padding: 1.5rem;
+                    @include xl{
+                        width: 30%;
+                    }
+                    i{
+                        color: $primary-color;
+                        font-size: 1.3rem;
+                        margin-top: auto;
+                        margin-bottom: auto;
+                        margin-left: 2rem;
+                        margin-right: 2rem;
+                    }
+                }
 
 #resto{
     background-color: #f0f0f0;
@@ -170,9 +202,12 @@ h2{
             margin-left: auto;
             margin-right: auto; 
             margin-bottom: 5%;  
-            height: 29vh; 
+            height: 28vh; 
             position: relative;
+            @include xl{
+                width: 45%;
         }
+    }
             h2{
                 padding-top: 2rem;
                 margin-bottom: 1rem;
@@ -218,13 +253,14 @@ h2{
 .container{
     background-color: #f0f0f0;
     border-radius: 50px 50px 0 0;
-    margin-top: -4rem;
     z-index: 1;
     position: relative;
+    margin: 0 auto;
+    max-width: 1650px;
+    margin-top: -4rem;
         .title-heart{
             display: flex;
             padding: 1rem 2rem 0 1rem;
-            height: 10vh;
             justify-content: space-between;
         }
 }
@@ -280,8 +316,6 @@ footer{
     animation-delay: 1.75s;
     animation-fill-mode: both;
     z-index: 10000;
-    overflow: scroll;
-
         #loading2{
             border: 5px solid #F3F3F3;
             border-top: 5px solid #9356DC;
@@ -343,25 +377,79 @@ footer{
 }
 
 .allmenu{
+    display: flex;
     background-color: white;
-    border-radius: 15px;
-    margin: 0 1rem;
-    padding-left: 15px;
-    margin-top: 4%;
     height: 4rem;
-    line-height: 150%;
-    padding-top: 1vh;
+    margin: 0 1rem;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    justify-content: space-between;
+    border-radius: 15px;
+    margin-top: 4%;
+    animation: anim 1s;
+    animation-fill-mode: both;
+    white-space: nowrap;
+    .padding-menu{
+        padding-top: 1vh;
+        line-height: 150%;
+        margin-left: 1vh;
+        flex: 1;
+        overflow: hidden;
+    }
         .allinline{
-            display: flex;
-            justify-content: space-between;
-            margin-right: 5%;
+            align-self: flex-end;
+            margin-bottom: .5rem;
+            margin-right: .5rem;
         }
-                .détails{
-                    overflow: hidden;
-                    text-overflow: ellipsis;
-                    white-space: nowrap;
-                }
+    &:hover{
+        .anim-valid{
+            visibility: visible;
+            margin-right: 0;
+            width: 70px;
+    }
 }
+&:hover{
+    .rotate{
+        animation: rotate 400ms linear;
+    }
+}
+}
+
+.anim-valid{
+    background-color: #99e2d0;
+    width: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 500ms linear;
+    transition-duration: .5s;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    visibility: hidden;
+    .circle{
+        color: #99e2d0;
+    }
+    .rotate{
+        height: 1.6rem;
+        width: 1.6rem;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100px;
+        
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(0deg)
+    }
+}
+
 
 .boxcommand{
     display: flex;
@@ -390,5 +478,146 @@ footer{
 .menu1{
     @include xl{
         width: 33%;
+    }
+}
+
+#container2{
+    @include xl{
+        display: flex;
+    }
+}
+
+#resto-all{
+    @include xl{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
+.title-heart{
+    @include xl{
+        height: 10vh;
+    }
+}
+
+
+.allmenut{
+    display: flex;
+    background-color: white;
+    height: 4rem;
+    margin: 0 1rem;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    justify-content: space-between;
+    border-radius: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-top: 4%;
+        .padding-menu{
+            padding-top: 1vh;
+            line-height: 150%;
+            margin-left: 1vh;
+            flex: 1;
+        }
+            .allinlinet{
+                align-self: flex-end;
+                margin-bottom: .5rem;
+                margin-right: .5rem;
+            }
+        &:hover{
+            .anim-validt{
+                visibility: visible;
+                margin-right: 0;
+                width: 70px;
+        }
+    }
+    &:hover{
+        .rotate{
+            animation: rotate 400ms linear;
+        }
+    }
+}
+
+.anim-validt{
+    background-color: #99e2d0;
+    width: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 500ms linear;
+    transition-duration: .5s;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    visibility: hidden;
+    .circle{
+        color: #99e2d0;
+    }
+    .rotate{
+        height: 1.6rem;
+        width: 1.6rem;
+        background-color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 100px;
+        
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(180deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
+
+.anim-0{
+    animation-delay: 0s;
+}
+
+.anim-1{
+    animation-delay: .1s;
+}
+
+.anim-2{
+    animation-delay: .2s;
+}
+
+.anim-3{
+    animation-delay: .3s;
+}
+
+.anim-4{
+    animation-delay: .4s;
+}
+
+.anim-5{
+    animation-delay: .5s;
+}
+
+.anim-6{
+    animation-delay: .6s;
+}
+
+.anim-7{
+    animation-delay: .7s
+}
+
+.anim-8{
+    animation-delay: .8s;
+}
+
+.anim-9{
+    animation-delay: .9s;
+}
+@keyframes anim {
+    0% {
+        transform: scale(0);
+    }
+    100%{
+        transform: scale(1)
     }
 }
