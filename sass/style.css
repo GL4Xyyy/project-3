@@ -51,6 +51,9 @@ td:not([align]), th:not([align]) {
 
 body {
   font-family: 'Roboto', sans-serif;
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 a {
@@ -285,6 +288,14 @@ header .logo {
   margin-top: 5%;
   padding-right: 5%;
   padding-left: 5%;
+}
+
+#column #explorer:hover {
+  opacity: .75;
+  -webkit-box-shadow: 0px 8px 10px 0px #000;
+          box-shadow: 0px 8px 10px 0px #000;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 #fonctionnement {
@@ -646,6 +657,14 @@ footer .fa-hands-helping {
   border: none;
   color: white;
   padding: .75rem 1.5rem;
+}
+
+.boxcommand .commander:hover {
+  opacity: .75;
+  -webkit-box-shadow: 0px 8px 10px 0px #000;
+          box-shadow: 0px 8px 10px 0px #000;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .anim-0 {
